@@ -13,6 +13,9 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import Accessibility from "./pages/Accessibility";
 import ScrollToTop from "./components/ScrollToTop";
+import Jobs from "./pages/Jobs";
+import WhyWorkInCare from "./pages/WhyworkInCare";
+import HowWeCare from "./pages/HowWeCare";
 
 export default function App() {
   return (
@@ -25,12 +28,14 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/support" element={<Support />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/accessibility" element={<Accessibility />} />
+          <Route path="/jobs" element={<Jobs/>}/>
+          <Route path="/why-work-in-care" element={<WhyWorkInCare/>}/>
+          <Route path="how-we-care" element={<HowWeCare/>}/>
         </Routes>
       </main>
       <Footer />

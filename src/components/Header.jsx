@@ -134,14 +134,14 @@ export default function Header() {
                     </li>
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link to="/how-we-work" className="block text-gray-700 hover:text-[#009EE3]">
+                        <Link to="/about?section=commitment" className="block text-gray-700 hover:text-[#009EE3]">
                           How We Work
                         </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link to="/working" className="block text-gray-700 hover:text-[#009EE3]">
+                        <Link to="/about?section=working" className="block text-gray-700 hover:text-[#009EE3]">
                           Working With Us
                         </Link>
                       </NavigationMenuLink>
@@ -156,7 +156,7 @@ export default function Header() {
           </NavigationMenu>
 
           {/* NORMAL LINKS */}
-          <Link to="/testimonials" className="hover:text-[#009EE3]">Testimonials</Link>
+          <Link to="/how-we-care" className="hover:text-[#009EE3]">How We Care</Link>
           <Link to="/jobs" className="hover:text-[#009EE3]">Jobs</Link>
           <Link to="/why-work-in-care" className="hover:text-[#009EE3]">Why Work in Care</Link>
 

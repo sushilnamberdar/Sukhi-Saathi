@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import topbanner from "../assets/AboutSectiontopbanner.png";
 
 // Accordion imports
@@ -10,7 +10,15 @@ import {
 } from "../components/ui/accordion";
 
 export default function About() {
-  const [active, setActive] = useState("working");
+  const [active, setActive] = useState("about");
+  useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  const section = params.get("section");
+
+  if (section) {
+    setActive(section);
+  }
+}, []);
 
   return (
     <section id="about" className="py-16 bg-white">

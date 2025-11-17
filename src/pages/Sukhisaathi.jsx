@@ -26,22 +26,6 @@ function About() {
     <section id="about" className="bg-indigo-50/50 py-12">
       <div className="max-w-6xl mx-auto px-4">
          <img src={aboutimage} alt="About SukhiSaathi Support" className="rounded-xl shadow" />
-        {/* <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h2 className="text-3xl font-semibold">About SukhiSaathi Support</h2>
-            <p className="mt-4 text-gray-700">We are a people-first homecare provider delivering compassionate care across communities. Our team are DBS checked, trained, and monitored to deliver the highest standard of care while preserving independence and dignity.</p>
-
-            <ul className="mt-6 grid gap-2 text-sm text-gray-600">
-              <li>Personalised care plans</li>
-              <li>24/7 support available</li>
-              <li>Care assessment and regular reviews</li>
-            </ul>
-          </div>
-
-          <div>
-            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000&auto=format&fit=crop&s=placeholder" alt="Team meeting" className="rounded-xl shadow" />
-          </div>
-        </div> */}
       </div>
     </section>
   );
@@ -78,7 +62,7 @@ function Testimonials() {
         <h3 className="text-2xl font-semibold">What families say</h3>
         <div className="mt-8 grid gap-6">
           {items.map((t) => (
-            <blockquote key={t.name} className="p-6 bg-gray-800 border border-white/30 rounded-xl shadow">
+            <blockquote key={t.name} className="p-6 bg-white border border-gray-200 rounded-xl shadow">
               <p className="text-gray-700">“{t.text}”</p>
               <cite className="block mt-3 text-sm text-gray-500">— {t.name}</cite>
             </blockquote>
@@ -138,18 +122,18 @@ function Contact() {
             <textarea name="message" rows="4" className="mt-1 w-full border rounded p-2" />
           </div>
           <div className="flex items-center gap-3">
-            <button type="submit" disabled={loading} className="bg-indigo-600 text-white px-4 py-2 rounded-md">{loading ? 'Sending...' : 'Send message'}</button>
-            <div className="text-sm text-gray-500">Or call <strong>0800 123 4567</strong></div>
+            <button type="submit" disabled={loading} className=" text-[#009EE3] border-[#009EE3] border-2 bg-white px-4 py-2 rounded-md">{loading ? 'Sending...' : 'Send message'}</button>
+            <div className="text-sm text-[#009EE3] hover:text-[#68ccf7] transition">Or call <a href="tel:+447471012326">+44 7471 012326</a></div>
           </div>
           {sent && <div className="text-sm text-green-600">Thanks — message sent. We'll contact you soon.</div>}
         </form>
 
-        <div className="p-6 bg-gray-800 border border-white/30 rounded-xl shadow">
+        <div className="p-6 bg-white  border-gray-300 border-2 border-white/30 rounded-xl shadow">
           <h4 className="font-semibold">Our office</h4>
           <p className="mt-2 text-sm text-gray-600">SukhiSaathi Support — Registered in the UK</p>
           <dl className="mt-4 text-sm text-gray-600">
             <dt className="font-medium">Phone</dt>
-            <dd className="mb-2">0800 123 4567</dd>
+            <dd className="mb-2">+44 7471 012326</dd>
             <dt className="font-medium">Email</dt>
             <dd className="mb-2">info@sukhisaathisupport.co.uk</dd>
             <dt className="font-medium">Address</dt>
@@ -157,7 +141,7 @@ function Contact() {
           </dl>
 
           <div className="mt-6">
-            <iframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!" className="w-full h-48 rounded" />
+            <iframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2369.360920230065!2d-2.3383725229080636!3d53.569174958027006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487ba5a49325e885%3A0x3a0b55fccb473470!2s173%20Alma%20St%2C%20Radcliffe%2C%20Manchester%20M26%204EX%2C%20UK!5e0!3m2!1sen!2sin!4v1763382518329!5m2!1sen!2sin" className="w-full h-48 rounded" />
           </div>
         </div>
       </div>

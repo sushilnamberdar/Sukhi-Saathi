@@ -20,11 +20,11 @@ export default function SupportSection() {
         </p>
 
         <div className="flex gap-4 mt-6">
-          <a href="/services" className="px-5 py-3 bg-indigo-600 text-white rounded-md shadow">Learn more</a>
-          <a href="/careers" className="px-5 py-3 border border-indigo-600 text-indigo-600 rounded-md">Join our team</a>
+          <a href="/services" className="px-5 py-3 bg-white text-[#009EE3] border-2 border-[#009EE3] hover:bg-[#009EE3] hover:text-white rounded-md shadow">Learn more</a>
+          <a href="/careers" className="px-5 py-3 border border-[#009EE3] text-[#009EE3] rounded-md">Join our team</a>
         </div>
 
-        <a href="#" className="block mt-6 text-indigo-600 hover:underline">
+        <a href="#" className="block mt-6 text-[#009EE3] hover:underline">
           Follow us on Facebook
         </a>
       </div>
