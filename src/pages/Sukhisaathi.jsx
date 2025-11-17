@@ -1,4 +1,5 @@
 import React from "react";
+import aboutimage from "../assets/about.png"
 
 // Single-file React site for "sukhisaathisupport.co.uk"
 // Assumes: Tailwind CSS is configured in the project (Vite / CRA + Tailwind).
@@ -20,52 +21,12 @@ export default function SukhiSaathi() {
 
 
 
-function Stat({ label, value }) {
-  return (
-    <div className="flex flex-col">
-      <div className="text-2xl font-bold text-indigo-600">{value}</div>
-      <div className="text-xs">{label}</div>
-    </div>
-  );
-}
-
-function Services() {
-  const services = [
-    { title: "78200 - Temporary employment agency activities", desc: "Short-term, flexible staffing solutions for care-related needs." },
-    { title: "88100 - Social work activities for elderly & disabled", desc: "Support services aimed at improving daily living for vulnerable people." },
-    { title: "96090 - Other service activities (not classified)", desc: "Specialised personal support and lifestyle assistance services." },
-    { title: "97000 - Households employing domestic personnel", desc: "Helping families hire and manage trusted domestic care staff." },
-    { title: "Live-in Care", desc: "Round-the-clock care in the comfort of home." },
-    { title: "Personal Care", desc: "Assistance with washing, dressing and medication." },
-    { title: "Companionship", desc: "Friendly support and social visits to reduce loneliness." },
-    { title: "Dementia Care", desc: "Specialist support for memory and cognitive needs." },
-    { title: "Respite Care", desc: "Temporary cover for family carers." },
-    { title: "Night Care", desc: "Assistance and monitoring through the night." },
-  ];
-
-  return (
-    <section id="services" className="max-w-6xl mx-auto px-4 py-16 bg-white text-black">
-      <h2 className="text-3xl font-semibold">Our Services</h2>
-      <p className="mt-2 text-gray-600">Flexible and tailored homecare packages to suit individual needs.</p>
-
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((s) => (
-          <article key={s.title} className="p-6 bg-white border border-gray-200 text-black rounded-xl shadow">
-            <h3 className="text-xl font-semibold">{s.title}</h3>
-            <p className="mt-2 text-gray-600">{s.desc}</p>
-            <a href="#contact" className="mt-4 inline-block text-indigo-600 text-sm">Get in touch →</a>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 function About() {
   return (
     <section id="about" className="bg-indigo-50/50 py-12">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+         <img src={aboutimage} alt="About SukhiSaathi Support" className="rounded-xl shadow" />
+        {/* <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-3xl font-semibold">About SukhiSaathi Support</h2>
             <p className="mt-4 text-gray-700">We are a people-first homecare provider delivering compassionate care across communities. Our team are DBS checked, trained, and monitored to deliver the highest standard of care while preserving independence and dignity.</p>
@@ -80,7 +41,7 @@ function About() {
           <div>
             <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000&auto=format&fit=crop&s=placeholder" alt="Team meeting" className="rounded-xl shadow" />
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -204,56 +165,4 @@ function Contact() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="bg-gray-900 text-gray-200 pt-14 pb-8 mt-12">
-      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-10">
 
-        {/* Useful Links */}
-        <div className="bg-gray-800 rounded-xl p-6 border border-white/20"><h3 className="text-lg font-semibold mb-4">Useful Links</h3>
-          <ul className="space-y-2 text-sm text-gray-300">
-            <li><a href="#" className="hover:text-white">Cookies Policy</a></li>
-            <li><a href="#" className="hover:text-white">Accessibility</a></li>
-            <li><a href="#" className="hover:text-white">Terms of Use</a></li>
-            <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-white">Modern Slavery</a></li>
-            <li><a href="#" className="hover:text-white">Care Assistant Jobs</a></li>
-            <li><a href="#" className="hover:text-white">Gender Pay Gap</a></li>
-            <li><a href="#" className="hover:text-white">Visit City & County Healthcare Group</a></li>
-            <li><a href="#" className="hover:text-white">Section 172(1) Statement</a></li>
-          </ul>
-        </div>
-
-        {/* Social Media */}
-        <div className="bg-gray-800 rounded-xl p-6 border border-white/20"><h3 className="text-lg font-semibold mb-4">Social Media</h3>
-          <ul className="flex items-center gap-4 text-xl">
-            <li>
-              <a href="#" target="_blank" className="hover:text-white">
-                <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1 .9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.6l-.4 3h-2.2v7A10 10 0 0 0 22 12"></path></svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Company Details */}
-        <div className="bg-gray-800 rounded-xl p-6 border border-white/20"><h3 className="text-lg font-semibold mb-4">Company Details</h3>
-          <p className="text-sm text-gray-300 leading-6">
-            SukhiSaathi Support Ltd<br />
-            Registered Office: London, UK<br />
-            Registered in England and Wales<br />
-            Registration No. 06991398
-          </p>
-
-          <div className="mt-4 flex gap-4 items-center">
-            <img src="https://guardianhomecare.co.uk/wp-content/uploads/sites/30/2020/08/new-ce-badge-fix.png" alt="cert1" className="w-20" />
-            <img src="https://guardianhomecare.co.uk/wp-content/uploads/sites/30/2023/07/attachment-300x196.png" alt="cert2" className="w-24" />
-          </div>
-        </div>
-      </div>
-
-      <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} SukhiSaathi Support — All rights reserved.
-      </div>
-    </footer>
-  );
-}

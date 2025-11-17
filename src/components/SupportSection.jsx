@@ -1,11 +1,12 @@
 import React from "react";
+import image5 from "../assets/image5.png";
 
 export default function SupportSection() {
   return (
     <section className="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-10 items-center">
       <img
-        src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?q=80&w=1200&auto=format&fit=crop"
-        className="rounded-2xl shadow-xl w-full h-80 object-cover"
+        src={image5}
+        className="rounded-2xl shadow-xl w-full h-96 object-cover"
       />
 
       <div>
