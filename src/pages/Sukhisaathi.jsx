@@ -1,5 +1,7 @@
 import React from "react";
 import aboutimage from "../assets/about.png"
+import Testimonials from "./Testimonials";
+import WhyChosseUs from "./ WhyChooseUs";
 
 // Single-file React site for "sukhisaathisupport.co.uk"
 // Assumes: Tailwind CSS is configured in the project (Vite / CRA + Tailwind).
@@ -11,7 +13,7 @@ export default function SukhiSaathi() {
       {/* <Header /> */}
       <main className="pt-24">
         <About />
-        <WhyChooseUs />
+        <WhyChosseUs />
         <Testimonials />
         <Contact />
       </main>
@@ -25,53 +27,13 @@ function About() {
   return (
     <section id="about" className="bg-indigo-50/50 py-12">
       <div className="max-w-6xl mx-auto px-4">
-         <img src={aboutimage} alt="About SukhiSaathi Support" className="rounded-xl shadow" />
+        <img src={aboutimage} alt="About SukhiSaathi Support" className="rounded-xl shadow" />
       </div>
     </section>
   );
 }
 
-function WhyChooseUs() {
-  return (
-    <section className="max-w-6xl mx-auto px-4 py-16 bg-white text-black rounded-xl shadow-sm">
-      <h3 className="text-2xl font-semibold">Why choose us</h3>
-      <div className="mt-6 grid sm:grid-cols-2 gap-6">
-        <div className="p-6 bg-white border border-gray-200 rounded-xl shadow">
-          <h4 className="font-semibold">Person-centred care</h4>
-          <p className="mt-2 text-sm text-gray-700">We focus on personal choice and dignity — care plans written with you, not for you.</p>
-        </div>
-        <div className="p-6 bg-white border border-gray-200 rounded-xl shadow">
-          <h4 className="font-semibold">Qualified carers</h4>
-          <p className="mt-2 text-sm text-gray-700">Ongoing training, DBS checks and supervision for all staff.</p>
-        </div>
-      </div>
-    </section>
-  );
-}
 
-function Testimonials() {
-  const items = [
-    { name: "Mrs Patel", text: "Wonderful carers — they treated my mother with respect and warmth." },
-    { name: "Mr Ahmed", text: "Professional and punctual. The team made life easier for our family." },
-     { name: "Mr Ahmed", text: "Professional and punctual. The team made life easier for our family." },
-  ];
-
-  return (
-    <section id="testimonials" className="bg-gradient-to-r min-h-screen from-white to-indigo-50 py-12">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <h3 className="text-2xl font-semibold">What families say</h3>
-        <div className="mt-8 grid gap-6">
-          {items.map((t) => (
-            <blockquote key={t.name} className="p-6 bg-white border border-gray-200 rounded-xl shadow">
-              <p className="text-gray-700">“{t.text}”</p>
-              <cite className="block mt-3 text-sm text-gray-500">— {t.name}</cite>
-            </blockquote>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Contact() {
   const [sent, setSent] = React.useState(false);
@@ -103,7 +65,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="max-w-6xl mx-auto px-4 py-16">
+    <section id="contact" className="max-w-6xl mx-auto px-4 border-2 border-gray-200 mt-3 rounded-lg py-16">
       <h3 className="text-2xl font-semibold">Contact us</h3>
       <p className="mt-2 text-gray-600">Call us or send a message and we will get back within 24 hours.</p>
 
@@ -135,7 +97,7 @@ function Contact() {
             <dt className="font-medium">Phone</dt>
             <dd className="mb-2">+44 7471 012326</dd>
             <dt className="font-medium">Email</dt>
-            <dd className="mb-2">info@sukhisaathisupport.co.uk</dd>
+            <a href="mailto:director@sukhisaathisupport.co.uk" className="mb-2 text-[#009EE3] hover:text-[#68ccf7] transition">director@sukhisaathisupport.co.uk</a>
             <dt className="font-medium">Address</dt>
             <dd>London / Service area: UK-wide</dd>
           </dl>
