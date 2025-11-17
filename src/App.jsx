@@ -16,6 +16,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Jobs from "./pages/Jobs";
 import WhyWorkInCare from "./pages/WhyworkInCare";
 import HowWeCare from "./pages/HowWeCare";
+import HomeCare from "./pages/HomeCare";
 
 export default function App() {
   return (
@@ -25,7 +26,8 @@ export default function App() {
       <main className="pt-24">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services-home-care" element={<Services />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/home-care" element={<HomeCare />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />

@@ -74,7 +74,7 @@ export default function Header() {
                   <ul className="grid w-[250px] gap-3 p-4">
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link to="/services-home-care" className="block text-gray-700 hover:text-[#009EE3]">
+                        <Link to="/home-care" className="block text-gray-700 hover:text-[#009EE3]">
                           Home Care
                         </Link>
                       </NavigationMenuLink>

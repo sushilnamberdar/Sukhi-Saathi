@@ -6,8 +6,29 @@ export default function MobileMenu() {
   const [servicesOpen, setServicesOpen] = React.useState(false);
   const [aboutOpen, setAboutOpen] = React.useState(false);
 
+  const menuRef = React.useRef(null);
+
+  // CLOSE MENU ON OUTSIDE CLICK
+  React.useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpen(false);
+        setServicesOpen(false);
+        setAboutOpen(false);
+      }
+    }
+
+    if (open) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
+
   return (
-    <div className="md:hidden relative">
+    <div className="md:hidden relative" ref={menuRef}>
       {/* Hamburger Button */}
       <button
         onClick={() => setOpen(!open)}
@@ -26,7 +47,7 @@ export default function MobileMenu() {
 
       {/* Mobile Dropdown Menu */}
       {open && (
-        <div className="fixed top-16 left-0 right-0 w-full bg-white shadow-xl border-t p-5 z-50 space-y-4">
+        <div className="fixed top-16 mt-10 left-0 right-0 w-full bg-white shadow-xl border-t p-5 z-50 space-y-4">
 
           {/* SERVICES DROPDOWN */}
           <div>
@@ -83,9 +104,9 @@ export default function MobileMenu() {
             )}
           </div>
 
-          {/* EXTRA STANDALONE LINKS */}
-          <Link to="/testimonials" className="block py-2 text-gray-700">
-            Testimonials
+          {/* EXTRA LINKS */}
+          <Link to="/how-we-care" className="block py-2 text-gray-700">
+            How We Care
           </Link>
 
           <Link to="/jobs" className="block py-2 text-gray-700">

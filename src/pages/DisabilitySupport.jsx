@@ -1,0 +1,63 @@
+import React from "react";
+
+export default function DisabilitySupport() {
+  return (
+    <section className="py-16 bg-white">
+      <div className="max-w-6xl mx-auto px-4 space-y-16">
+
+        {/* HERO */}
+        <div className="text-center max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-gray-800">Disability Support</h1>
+          <p className="mt-4 text-gray-600 text-lg">
+            Tailored support for individuals with physical, learning, or complex disabilities — empowering independence and confidence.
+          </p>
+        </div>
+
+        {/* ABOUT SUPPORT */}
+        <div className="p-8 bg-gray-50 rounded-xl border shadow-sm">
+          <h2 className="text-2xl font-semibold">Supporting Your Journey</h2>
+          <p className="mt-3 text-gray-700 leading-relaxed">
+            Our disability support service is built around your goals. Whether it’s help at home,
+            learning new skills, or community engagement, we work with you at your pace.
+          </p>
+        </div>
+
+        {/* SUPPORT OPTIONS */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            "Daily living support & personal care",
+            "Community access & social engagement",
+            "Help with appointments & travel",
+            "Support with cooking, cleaning & routines",
+            "Medication support",
+            "Skill-building & independence coaching"
+          ].map((item, i) => (
+            <div key={i} className="p-6 bg-white border rounded-xl shadow-sm">
+              <p className="text-gray-700">{item}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* WHO IS IT FOR */}
+        <div className="p-8 bg-white rounded-xl border shadow-sm">
+          <h2 className="text-2xl font-semibold mb-4">Who We Support</h2>
+          <ul className="space-y-2 text-gray-700">
+            <li>• Individuals with physical disabilities</li>
+            <li>• People with learning disabilities</li>
+            <li>• Cognitive or neurological conditions</li>
+            <li>• Autism, Down syndrome, mobility impairments</li>
+          </ul>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <a href="/contact"
+            className="px-8 py-4 bg-[#009EE3] text-white font-semibold rounded-lg hover:bg-[#007bb8] shadow">
+            Get Disability Support
+          </a>
+        </div>
+
+      </div>
+    </section>
+  );
+}
