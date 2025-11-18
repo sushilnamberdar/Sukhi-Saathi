@@ -3,10 +3,10 @@ import { useLocation } from "react-router-dom";
 import Contact from "./Contact";
 
 export default function Services() {
-  const [Path,setpath] = useState("null");
+  const [Path, setpath] = useState("null");
   const location = useLocation();
 
- 
+
   useEffect(() => {
     const cleaned = location.pathname.replace("/", "") || "home";
     setpath(cleaned);
@@ -14,51 +14,38 @@ export default function Services() {
 
   const services = [
     {
-      title: "Temporary Employment & Care Staffing",
-      subtitle: " Temporary employment agency activities",
-      desc: "Providing trained, compliant, flexible care staff to support homes, families, and organisations on short notice."
+      title: "Temporary Care & Support Staffing",
+      subtitle: "Flexible Support Personnel",
+      desc: "Providing friendly, trained support workers to assist families and organisations with everyday non-regulated care tasks."
     },
     {
-      title: "Social Care for Elderly & Disabled",
-      subtitle: " Social work activities without accommodation",
-      desc: "Community-based support focused on independence, safety, dignity and personalised daily living assistance."
-    },
-    {
-      title: "Specialist Lifestyle & Support Services",
-      subtitle: " Other service activities not elsewhere classified",
-      desc: "Tailored lifestyle support for individuals needing help with personal organisation, routines and home living."
+      title: "Lifestyle & Independence Support",
+      subtitle: "Daily Living Assistance",
+      desc: "Helping individuals manage routines, stay organised, and remain confident and independent at home."
     },
     {
       title: "Household Care Employment Services",
-      subtitle: " Households as employers of domestic personnel",
-      desc: "Helping families safely employ trusted domestic and care personnel, including recruitment and vetting."
-    },
-    // Care services
-    {
-      title: "Live-in Care",
-      desc: "24-hour personalised care for individuals who wish to remain safely in the comfort of their own home."
+      subtitle: "Domestic Personnel Support",
+      desc: "Helping families identify, vet, and organise trusted household support and companionship workers."
     },
     {
-      title: "Personal Care",
-      desc: "Support with washing, dressing, grooming, medication and other essential daily personal needs."
+      title: "Live-In Home Support",
+      desc: "Round-the-clock companionship, household support, supervision, community access, and daily routine assistance. (Non-regulated)"
     },
     {
       title: "Companionship",
-      desc: "Friendly home visits, conversation, emotional support and meaningful social engagement."
+      desc: "Conversation, emotional support, social visits, outings, hobbies, and community activities."
     },
     {
-      title: "Dementia Care",
-      desc: "Specialist dementia-trained carers supporting memory, behaviour, routine, and emotional wellbeing."
+      title: "Respite Support",
+      desc: "Short-term assistance giving family members time to rest while we help with safe, everyday non-regulated tasks."
     },
     {
-      title: "Respite Care",
-      desc: "Short-term care to support family carers, offering peace of mind and temporary relief."
-    },
-    {
-      title: "Night Care",
-      desc: "Full overnight support including safety checks, mobility assistance, and reassurance."
-    },
+      title: "Night Sitting & Home Supervision",
+      desc: "Overnight presence, reassurance, monitoring, and household support — without delivering personal care."
+    }
   ];
+
 
   return (
     <section className="py-16 bg-white">
@@ -88,7 +75,7 @@ export default function Services() {
           ))}
         </div>
       </div>
-      {Path==="services-home-care" && <Contact />}
+      {Path === "services-home-care" && <Contact />}
     </section>
   );
 }
