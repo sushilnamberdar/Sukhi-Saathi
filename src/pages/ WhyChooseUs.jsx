@@ -5,7 +5,7 @@ export default function WhyChosseUs() {
     <section className="max-w-6xl mx-auto px-4 py-16 bg-white text-black">
       <h3 className="text-3xl font-bold text-center">Why Choose Us</h3>
       <p className="text-center text-gray-600 max-w-2xl mx-auto mt-4">
-        We provide safe, compassionate, reliable care — delivered by people who treat your family like their own.
+        We provide safe, friendly and reliable support — delivered by people who treat your family with respect and dignity.
       </p>
 
       {/* FEATURE GRID */}
@@ -14,42 +14,42 @@ export default function WhyChosseUs() {
         <div className="p-6 bg-white border border-gray-200 rounded-xl shadow hover:shadow-md transition">
           <h4 className="font-semibold text-lg">Person-centred support</h4>
           <p className="mt-2 text-sm text-gray-700">
-            Every care plan is created with you — not for you. We prioritise dignity, choice, and independence.
+            We work around your routines, preferences and lifestyle — giving you full choice and control every day.
           </p>
         </div>
 
         <div className="p-6 bg-white border border-gray-200 rounded-xl shadow hover:shadow-md transition">
-          <h4 className="font-semibold text-lg">Fully Trained Carers</h4>
+          <h4 className="font-semibold text-lg">Trained Support Workers</h4>
           <p className="mt-2 text-sm text-gray-700">
-            Our carers receive ongoing training, DBS checks, and regular supervision to ensure the highest standards.
+            Our team receives regular training, DBS checks, and ongoing development to deliver safe and consistent help.
           </p>
         </div>
 
         <div className="p-6 bg-white border border-gray-200 rounded-xl shadow hover:shadow-md transition">
-          <h4 className="font-semibold text-lg">Reliable & Consistent Support</h4>
+          <h4 className="font-semibold text-lg">Reliable & Consistent Visits</h4>
           <p className="mt-2 text-sm text-gray-700">
-            We provide continuity of care — the same familiar faces who understand your routine and preferences.
+            You’ll see familiar faces who understand your needs and build supportive, trusting relationships.
           </p>
         </div>
 
         <div className="p-6 bg-white border border-gray-200 rounded-xl shadow hover:shadow-md transition">
-          <h4 className="font-semibold text-lg">24/7 Availability</h4>
+          <h4 className="font-semibold text-lg">24/7 Support Availability</h4>
           <p className="mt-2 text-sm text-gray-700">
-            Whether it's regular visits or urgent support, our team is here whenever you need us.
+            Whether it's daytime, evenings or weekends — our team is here whenever you need assistance.
           </p>
         </div>
 
         <div className="p-6 bg-white border border-gray-200 rounded-xl shadow hover:shadow-md transition">
-          <h4 className="font-semibold text-lg">Local, Trusted Teams</h4>
+          <h4 className="font-semibold text-lg">Local, Trusted Team</h4>
           <p className="mt-2 text-sm text-gray-700">
-            Our carers live and work within your community — providing support that feels personal and familiar.
+            We operate within your community, giving you personalised support from people who genuinely care.
           </p>
         </div>
 
         <div className="p-6 bg-white border border-gray-200 rounded-xl shadow hover:shadow-md transition">
-          <h4 className="font-semibold text-lg">Specialist Care Expertise</h4>
+          <h4 className="font-semibold text-lg">Enhanced Wellbeing Support</h4>
           <p className="mt-2 text-sm text-gray-700">
-            Dementia, mobility support, medication help, complex needs — our team is trained for all levels of care.
+            We help with routines, social activities, household tasks and safe independence — tailored to your lifestyle.
           </p>
         </div>
 
@@ -59,33 +59,27 @@ export default function WhyChosseUs() {
       <div className="mt-16 grid sm:grid-cols-3 gap-8 text-center">
         <div>
           <h3 className="text-4xl font-bold text-[#009EE3]">98%</h3>
-          <p className="text-gray-600 mt-2">Family Satisfaction</p>
+          <p className="text-gray-600 mt-2">Client Satisfaction</p>
         </div>
 
         <div>
-          <h3 className="text-4xl font-bold text-[#009EE3]">15,000+</h3>
-          <p className="text-gray-600 mt-2">Clients Supported Nationwide</p>
+          <h3 className="text-4xl font-bold text-[#009EE3]">Local</h3>
+          <p className="text-gray-600 mt-2">Community Support</p>
         </div>
 
         <div>
           <h3 className="text-4xl font-bold text-[#009EE3]">24/7</h3>
-          <p className="text-gray-600 mt-2">Care Availability</p>
+          <p className="text-gray-600 mt-2">Support Line</p>
         </div>
       </div>
 
       {/* TRUST BADGES */}
       <div className="mt-16 flex flex-wrap justify-center gap-6">
-        <div className="px-6 py-3 bg-gray-100 rounded-xl text-gray-700 border">CQC Compliant</div>
         <div className="px-6 py-3 bg-gray-100 rounded-xl text-gray-700 border">Fully Insured</div>
-        <div className="px-6 py-3 bg-gray-100 rounded-xl text-gray-700 border">DBS Checked Staff</div>
-        <div className="px-6 py-3 bg-gray-100 rounded-xl text-gray-700 border">ISO-Aligned Standards</div>
+        <div className="px-6 py-3 bg-gray-100 rounded-xl text-gray-700 border">DBS Checked Team</div>
+        <div className="px-6 py-3 bg-gray-100 rounded-xl text-gray-700 border">Quality Standards Focused</div>
+        <div className="px-6 py-3 bg-gray-100 rounded-xl text-gray-700 border">Trusted Community Support</div>
       </div>
-
-      {/* CTA */}
-      <div className="text-center mt-14">
-      
-      </div>
-
     </section>
   );
 }
