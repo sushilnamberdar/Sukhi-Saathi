@@ -12,7 +12,7 @@ export default function WhyChosseUs() {
       <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <div className="p-6 bg-white border border-gray-200 rounded-xl shadow hover:shadow-md transition">
-          <h4 className="font-semibold text-lg">Person-centred Care</h4>
+          <h4 className="font-semibold text-lg">Person-centred support</h4>
           <p className="mt-2 text-sm text-gray-700">
             Every care plan is created with you — not for you. We prioritise dignity, choice, and independence.
           </p>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import footerlogo from '../assets/footer/footerlogo.png'
 
 export default function Footer() {
   return (
@@ -43,8 +44,7 @@ export default function Footer() {
           </p>
 
           <div className="mt-4 flex gap-4 items-center">
-            <img src="https://guardianhomecare.co.uk/wp-content/uploads/sites/30/2020/08/new-ce-badge-fix.png" className="w-20" />
-            <img src="https://guardianhomecare.co.uk/wp-content/uploads/sites/30/2023/07/attachment.png" className="w-24" />
+            <img src={footerlogo} className="w-20" />
           </div>
         </div>
 
