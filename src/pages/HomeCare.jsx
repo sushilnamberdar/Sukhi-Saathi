@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function HomeCare() {
     return (
         <section className="py-16 bg-white">
-            <div className="relative w-full h-60 sm:h-64 md:h-80 lg:h-[420px] xl:h-[500px] rounded-xl overflow-hidden mb-12">
+             <div className="relative w-full h-60 sm:h-64 md:h-80 lg:h-[620px] xl:h-[1600px] rounded-xl overflow-hidden mb-12">
                 <img
                     src={homecareImg}
                     alt="Home Care"

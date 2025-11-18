@@ -1,8 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import disabilityImag from '../assets/services/disability.png'
 
 export default function DisabilitySupport() {
   return (
     <section className="py-16 bg-white">
+      <div className="relative w-full h-60 sm:h-64 md:h-80 lg:h-[420px] xl:h-[500px] rounded-xl overflow-hidden mb-12">
+        <img
+          src={disabilityImag}
+          alt="Home Care"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute bottom-4 left-4 bg-black/60 text-white px-4 py-2 rounded-lg">
+          <h1 className="text-2xl md:text-3xl font-semibold">Home Care Services</h1>
+        </div>
+      </div>
       <div className="max-w-6xl mx-auto px-4 space-y-16">
 
         {/* HERO */}
@@ -51,10 +63,10 @@ export default function DisabilitySupport() {
 
         {/* CTA */}
         <div className="text-center">
-          <a href="/contact"
+          <Link to="/contact"
             className="px-8 py-4 bg-[#009EE3] text-white font-semibold rounded-lg hover:bg-[#007bb8] shadow">
             Get Disability Support
-          </a>
+          </Link>
         </div>
 
       </div>

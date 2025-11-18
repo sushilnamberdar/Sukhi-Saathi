@@ -17,17 +17,24 @@ import Jobs from "./pages/Jobs";
 import WhyWorkInCare from "./pages/WhyworkInCare";
 import HowWeCare from "./pages/HowWeCare";
 import HomeCare from "./pages/HomeCare";
+import DisabilitySupport from "./pages/DisabilitySupport";
+import CompanionshipCare from "./pages/CompanionshipCare";
+import RespiteCare from "./pages/RespiteCare";
+import WhatsAppSupport from "./pages/WhatsAppSupport";
 
 export default function App() {
   return (
     <BrowserRouter>
-    <ScrollToTop/>
+      <ScrollToTop />
       <Header />
       <main className="pt-24">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/home-care" element={<HomeCare />} />
+          <Route path="/disability-support" element={<DisabilitySupport />} />
+          <Route path="/companionship" element={<CompanionshipCare/>}/>
+          <Route path="/respite" element={<RespiteCare/>}/>
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
@@ -35,12 +42,13 @@ export default function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/accessibility" element={<Accessibility />} />
-          <Route path="/jobs" element={<Jobs/>}/>
-          <Route path="/why-work-in-care" element={<WhyWorkInCare/>}/>
-          <Route path="how-we-care" element={<HowWeCare/>}/>
+          <Route path="/jobs" element={<Jobs />} />
+          <Route path="/why-work-in-care" element={<WhyWorkInCare />} />
+          <Route path="how-we-care" element={<HowWeCare />} />
         </Routes>
       </main>
       <Footer />
+      <WhatsAppSupport/>
     </BrowserRouter>
   );
 }

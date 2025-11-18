@@ -1,9 +1,18 @@
 import React from "react";
+import respitecareImg from "../assets/services/RespiteCare.png";
 
 export default function RespiteCare() {
   return (
     <section className="py-16 bg-white">
+       <div className="relative w-full h-60 sm:h-64 md:h-80 lg:h-[620px] xl:h-[1600px] rounded-xl overflow-hidden mb-12">
+        <img
+          src={respitecareImg}
+          alt="Respite Care"
+          className="w-full h-full object-cover"
+        />
+      </div>
       <div className="max-w-6xl mx-auto px-4 space-y-16">
+
 
         {/* HERO */}
         <div className="text-center max-w-3xl mx-auto">

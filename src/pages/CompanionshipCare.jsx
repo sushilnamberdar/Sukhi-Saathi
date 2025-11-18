@@ -1,8 +1,20 @@
 import React from "react";
+import campanionshipImg from "../assets/services/companionship.png";
+import icon from '../assets/logo.png'
 
 export default function CompanionshipCare() {
   return (
     <section className="py-16 bg-white">
+      <div className="relative w-full h-60 sm:h-64 md:h-80 lg:h-[620px] xl:h-[1600px] rounded-xl overflow-hidden mb-12">
+        <img
+          src={campanionshipImg}
+          alt="Companionship Care"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute bottom-4 left-4 bg-black/60 text-white rounded-lg">
+        <img src={icon} className="h-14"/>
+        </div>
+      </div>
       <div className="max-w-6xl mx-auto px-4 space-y-16">
 
         {/* HERO */}
