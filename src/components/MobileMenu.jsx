@@ -47,7 +47,7 @@ export default function MobileMenu() {
 
       {/* Mobile Dropdown Menu */}
       {open && (
-        <div className="fixed top-16 mt-10 left-0 right-0 w-full bg-white shadow-xl border-t p-5 z-50 space-y-4">
+        <div className="fixed top-16 mt-7 left-0 right-0 w-full bg-white shadow-xl border-t p-5 z-50 space-y-4">
 
           {/* SERVICES DROPDOWN */}
           <div>
