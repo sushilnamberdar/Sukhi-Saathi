@@ -43,7 +43,7 @@ export default function Footer() {
             177 Alma Street, Radcliffe, Manchester, England, M26 4EX<br />
             Providing non-regulated home & community support services.<br />
           </p>
-
+          <p>Company number 16590265</p>
           <div className="mt-4 flex gap-4 items-center">
             <img src={footerlogo} className="w-20" />
           </div>
