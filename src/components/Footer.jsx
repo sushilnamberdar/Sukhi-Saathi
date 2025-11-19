@@ -40,7 +40,7 @@ export default function Footer() {
           <h3 className="text-lg font-semibold mb-4">Company Details</h3>
           <p className="text-sm leading-6 text-gray-300">
             SukhiSaathi Support<br />
-            London, United Kingdom<br />
+            177 Alma Street, Radcliffe, Manchester, England, M26 4EX<br />
             Providing non-regulated home & community support services.<br />
           </p>
 

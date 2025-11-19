@@ -65,7 +65,7 @@ export default function Contact() {
             <dt className="font-medium">Email</dt>
             <a href="mailto:director@sukhisaathisupport.co.uk" className="mb-2 text-[#009EE3] hover:text-[#68ccf7] transition">director@sukhisaathisupport.co.uk</a>
             <dt className="font-medium">Address</dt>
-            <dd>London / Service area: UK-wide</dd>
+            <dd>177 Alma Street, Radcliffe, Manchester, England, M26 4EX</dd>
           </dl>
 
           <div className="mt-6">
