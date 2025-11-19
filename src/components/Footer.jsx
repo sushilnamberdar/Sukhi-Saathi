@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import footerlogo from '../assets/footer/footerlogo.png'
+import footerlogo from "../assets/footer/footerlogo.png";
 
 export default function Footer() {
   return (
@@ -12,9 +12,11 @@ export default function Footer() {
           <h3 className="text-lg font-semibold mb-4">Useful Links</h3>
           <ul className="space-y-2 text-sm">
             <li><Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
-            <li><Link to="/terms" className="hover:text-white">Terms of Use</Link></li>
+            <li><Link to="/terms" className="hover:text-white">Terms & Conditions</Link></li>
             <li><Link to="/accessibility" className="hover:text-white">Accessibility</Link></li>
-            <li><Link to="/jobs" className="hover:text-white">Care Assistant Jobs</Link></li>
+            <li><Link to="/faq" className="hover:text-white">FAQ</Link></li>
+            <li><Link to="/complaints" className="hover:text-white">Complaints</Link></li>
+            <li><Link to="/safeguarding" className="hover:text-white">Safeguarding</Link></li>
           </ul>
         </div>
 
@@ -37,10 +39,9 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold mb-4">Company Details</h3>
           <p className="text-sm leading-6 text-gray-300">
-            SukhiSaathi Support Ltd<br />
-            Registered Office: London, UK<br />
-            Registered in England & Wales<br />
-            Company No. 06991398
+            SukhiSaathi Support<br />
+            London, United Kingdom<br />
+            Providing non-regulated home & community support services.<br />
           </p>
 
           <div className="mt-4 flex gap-4 items-center">

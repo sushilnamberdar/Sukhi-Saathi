@@ -57,6 +57,16 @@ export default function Services() {
           <p className="mt-4 text-gray-600 text-lg">
             Tailored homecare and support services designed to meet the unique needs of every individual.
           </p>
+          <p className="mt-4 text-gray-600 text-lg">
+            We provide personalised home support, companionship, and practical daily-living assistance —
+            helping individuals feel confident, safe, and independent.
+          </p>
+
+          <p className="mt-2 text-sm text-gray-500">
+            *We offer non-regulated support services (companionship, household help, community access, daily
+            living assistance). We do not provide personal care or medical services that require CQC registration.
+          </p>
+
         </div>
 
         {/* SERVICE GRID */}

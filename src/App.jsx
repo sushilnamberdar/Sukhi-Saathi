@@ -21,6 +21,9 @@ import DisabilitySupport from "./pages/DisabilitySupport";
 import CompanionshipCare from "./pages/CompanionshipCare";
 import RespiteCare from "./pages/RespiteCare";
 import WhatsAppSupport from "./pages/WhatsAppSupport";
+import FAQ from "./pages/FAQ";
+import Complaints from "./pages/Complaints";
+import Safeguarding from "./pages/Safeguarding";
 
 export default function App() {
   return (
@@ -42,6 +45,9 @@ export default function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/accessibility" element={<Accessibility />} />
+          <Route path="/faq" element={<FAQ/>}/>
+          <Route path="/complaints" element= {<Complaints/>}/>
+          <Route path="/safeguarding" element={<Safeguarding/>}/>
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/why-work-in-care" element={<WhyWorkInCare />} />
           <Route path="how-we-care" element={<HowWeCare />} />

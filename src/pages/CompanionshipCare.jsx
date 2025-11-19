@@ -29,7 +29,7 @@ export default function CompanionshipCare() {
         <div className="bg-gray-50 p-8 rounded-xl border">
           <h2 className="text-2xl font-semibold">What Is Companionship Care?</h2>
           <p className="mt-3 text-gray-700 leading-relaxed">
-            Companionship care focuses on emotional wellbeing. Our carers offer friendship,
+            Companionship care focuses on emotional wellbeing. Our support workers offer friendship,
             conversation, outings, and help with tasks — making life brighter and more connected.
           </p>
         </div>

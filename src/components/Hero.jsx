@@ -8,13 +8,13 @@ export default function Hero() {
         {/* Left text section */}
         <div>
           <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-            Compassionate home care services across the UK
+            Friendly, trusted home support for everyday living
           </h1>
 
           <p className="mt-4 text-lg text-gray-700">
-            SukhiSaathi Support provides personalised live-in care,
-            companionship, and homecare support tailored to you or your
-            loved one. Safe. Dignified. Reliable.
+            SukhiSaathi Support provides non-medical home assistance,
+            companionship, and wellbeing support — helping people stay
+            independent, confident, and connected at home.
           </p>
 
           <div className="mt-6 flex gap-3">
@@ -22,25 +22,26 @@ export default function Hero() {
               href="/contact"
               className="inline-block bg-[#009EE3] text-white px-5 py-3 rounded-md shadow"
             >
-              Book a free assessment
+              Contact us today
             </a>
 
             <a
               href="/services"
               className="inline-block border border-[#009EE3] text-[#009EE3] px-5 py-3 rounded-md"
             >
-              Our services
+              Our support services
             </a>
           </div>
 
-          <div className="mt-8 flex  gap-3 text-sm text-gray-600">
+          <div className="mt-8 flex gap-6 text-sm text-gray-600">
             <div>
-            <p className="text-2xl">30+</p>
-            <p className="text-gray-600">Years' combined experience:</p>
+              <p className="text-2xl font-bold text-[#009EE3]">30+</p>
+              <p>Years’ combined experience</p>
             </div>
+
             <div>
-            <p className="text-2xl">500+</p>
-            <p className="text-gray-600">Clients supported:</p>
+              <p className="text-2xl font-bold text-[#009EE3]">500+</p>
+              <p>Individuals supported</p>
             </div>
           </div>
         </div>
@@ -49,7 +50,7 @@ export default function Hero() {
         <div className="relative">
           <img
             src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop"
-            alt="Carer and older woman smiling"
+            alt="Support worker smiling with an older person"
             className="rounded-2xl shadow-xl w-full object-cover h-80"
           />
         </div>
@@ -58,6 +59,3 @@ export default function Hero() {
     </section>
   );
 }
-
-
-
