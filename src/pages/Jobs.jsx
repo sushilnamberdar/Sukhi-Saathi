@@ -4,12 +4,27 @@ export default function Jobs() {
   const [showForm, setShowForm] = useState(false);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState("");
+  const [captchaToken, setCaptchaToken] = useState("");
+
 
   const JOB = {
     title: "Care Assistant",
     location: "United Kingdom",
     desc: "Provide home support, companionship, independence support, and general day-to-day assistance to individuals across the UK. Training provided."
   };
+
+  useEffect(() => {
+    if (showForm) {
+      setTimeout(() => {
+        if (window.turnstile) {
+          window.turnstile.render(".cf-turnstile-job", {
+            sitekey: "0x4AAAAAACB8UuVvJ0oVE9z0",
+            callback: (token) => setCaptchaToken(token),
+          });
+        }
+      }, 300);
+    }
+  }, [showForm]);
 
   // SUBMIT APPLICATION
   const submitForm = async (e) => {
@@ -27,7 +42,9 @@ export default function Jobs() {
       resume: formData.get("resume"),
       interest: formData.get("interest"),
       message: formData.get("message") || "",
+      captcha: captchaToken,    // <-- ADD THIS
     };
+
 
     try {
       const res = await fetch("https://api.sukhisaathisupport.co.uk/apply", {
@@ -53,7 +70,7 @@ export default function Jobs() {
 
   return (
     <section className="py-16 max-w-5xl mx-auto px-4">
-      
+
       {/* HEADER */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Care Assistant – Now Hiring</h1>
@@ -67,7 +84,7 @@ export default function Jobs() {
       </div>
 
       <p className="text-gray-600 max-w-2xl mb-10">
-        Join our caring and dedicated team. As a Care Assistant, you will make a positive impact 
+        Join our caring and dedicated team. As a Care Assistant, you will make a positive impact
         on individuals' lives by helping them stay independent, active and supported.
       </p>
 
@@ -98,11 +115,13 @@ export default function Jobs() {
             <h2 className="text-2xl font-semibold mb-4">Apply for Care Assistant</h2>
 
             <form onSubmit={submitForm} className="space-y-4">
-              
+
               <input type="text" name="name" required placeholder="Your Name" className="border p-2 w-full rounded" />
               <input type="email" name="email" required placeholder="Email" className="border p-2 w-full rounded" />
               <input type="text" name="phone" required placeholder="Phone Number" className="border p-2 w-full rounded" />
               <input type="text" name="resume" required placeholder="Resume Link (Google Drive / URL)" className="border p-2 w-full rounded" />
+              <div className="cf-turnstile-job"></div>
+
 
               <select name="interest" required className="border p-2 w-full rounded">
                 <option value="">Area of Interest</option>
