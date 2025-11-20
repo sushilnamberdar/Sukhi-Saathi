@@ -6,11 +6,17 @@ export default function Contact() {
   const [captchaToken, setCaptchaToken] = useState("");
 
   // Load Turnstile token callback
-  useEffect(() => {
-    window.turnstileCallback = function (token) {
-      setCaptchaToken(token);
-    };
-  }, []);
+ useEffect(() => {
+  // render widget after React mounts
+  if (window.turnstile) {
+    window.turnstile.render('.cf-turnstile', {
+      sitekey: "0x4AAAAAACB8UuVvJ0oVE9z0",
+      callback: function(token) {
+        setCaptchaToken(token);
+      }
+    });
+  }
+}, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
