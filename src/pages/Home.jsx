@@ -16,7 +16,7 @@ export default function Home() {
       <LogoShowcase/>
       <Services/>
       <SukhiSaathi/>
-      <Testimonials/>
+      {/* <Testimonials/> */}
       <WhyChosseUs/>
       <Contact/>
     </>

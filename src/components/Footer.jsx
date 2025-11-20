@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import footerlogo from "../assets/footer/footerlogo.png";
 
 export default function Footer() {
   return (
@@ -45,7 +44,6 @@ export default function Footer() {
           </p>
           <p className="text-sm leading-6 text-gray-300">Company number 16590265</p>
           <div className="mt-4 flex gap-4 items-center">
-            <img src={footerlogo} className="w-20" />
           </div>
         </div>
 

@@ -109,7 +109,7 @@ export default function Contact() {
 
             <dt className="font-medium">Email</dt>
             <a href="mailto:director@sukhisaathisupport.co.uk"
-              className="text-[#009EE3] hover:text-[#68ccf7]">director@sukhisaathisupport.co.uk</a>
+              className="text-[#009EE3] hover:text-[#68ccf7]">info@sukhisaathisupport.co.uk</a>
 
             <dt className="font-medium mt-3">Address</dt>
             <dd>177 Alma Street, Radcliffe, Manchester, M26 4EX</dd>
