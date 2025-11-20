@@ -24,19 +24,19 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur shadow-sm z-40">
       <div className="flex items-center justify-center space-x-6">
         {/* Click to Call */}
-        <a
+        {/* <a
           href="tel:+447471012326"
           className="text-center text-sm text-[#009EE3] py-1 hover:text-[#68ccf7] transition"
         >
           +44 7471 012326
-        </a>
+        </a> */}
 
         {/* Click to Email */}
         <a
           href="mailto:director@sukhisaathisupport.co.uk"
           className="text-center text-sm text-[#009EE3] py-1 hover:text-[#68ccf7] transition"
         >
-          director@sukhisaathisupport.co.uk
+          info@sukhisaathisupport.co.uk
         </a>
       </div>
 

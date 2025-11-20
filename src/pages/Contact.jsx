@@ -1,29 +1,38 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 
-export default function Contact() {
+export default function Jobs() {
+  const [showForm, setShowForm] = useState(false);
   const [loading, setLoading] = useState(false);
   const [captchaToken, setCaptchaToken] = useState("");
 
-  // Load Turnstile token callback
-  useEffect(() => {
-    // render widget after React mounts
-    if (window.turnstile) {
-      window.turnstile.render('.cf-turnstile', {
-        sitekey: "0x4AAAAAACB8UuVvJ0oVE9z0",
-        callback: function (token) {
-          setCaptchaToken(token);
-        }
-      });
-    }
-  }, []);
+  const JOB = {
+    title: "Care Assistant",
+    location: "United Kingdom",
+    desc: "Provide home support, companionship, independence support, and general day-to-day assistance to individuals across the UK. Training provided."
+  };
 
-  const handleSubmit = async (e) => {
+  // LOAD TURNSTILE CAPTCHA
+  useEffect(() => {
+    if (showForm) {
+      setTimeout(() => {
+        if (window.turnstile) {
+          window.turnstile.render(".cf-turnstile-job", {
+            sitekey: "0x4AAAAAACB8UuVvJ0oVE9z0",
+            callback: (token) => setCaptchaToken(token)
+          });
+        }
+      }, 300);
+    }
+  }, [showForm]);
+
+  // SUBMIT APPLICATION
+  const submitForm = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     if (!captchaToken) {
-      toast.error("Captcha failed. Please try again.");
+      toast.error("Captcha verification failed.");
       setLoading(false);
       return;
     }
@@ -31,28 +40,33 @@ export default function Contact() {
     const formData = new FormData(e.target);
 
     const payload = {
+      jobTitle: JOB.title,
       name: formData.get("name"),
-      phone: formData.get("contact"),
-      email: "noreply@sukhisaathisupport.co.uk",
-      subject: "New Contact Form Submission",
-      message: formData.get("message"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      resume: formData.get("resume"),
+      interest: formData.get("interest"),
+      message: formData.get("message") || "",
       captcha: captchaToken,
     };
 
     try {
-      const res = await fetch("https://api.sukhisaathisupport.co.uk/contact", {
+      const res = await fetch("https://api.sukhisaathisupport.co.uk/apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
+      const data = await res.json();
+
       if (res.ok) {
-        toast.success("Thank you! We’ve received your message — our team will contact you within 24 hours.");
+        toast.success("Application submitted! We will contact you within 24 hours.");
         e.target.reset();
+        window.turnstile?.reset(".cf-turnstile-job");
         setCaptchaToken("");
-        window.turnstile?.reset(); // reset widget
+        setShowForm(false);
       } else {
-        toast.error("Error sending message.");
+        toast.error(data.error || "Something went wrong.");
       }
     } catch (err) {
       toast.error("Network error — try again later.");
@@ -62,60 +76,90 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="max-w-6xl mx-auto px-4 py-16 border-2 border-gray-200 mt-3 rounded-lg">
+    <section className="py-16 max-w-5xl mx-auto px-4">
 
-      <h3 className="text-2xl font-semibold">Contact us</h3>
-      <p className="mt-2 text-gray-600">Call us or send a message — we respond within 24 hours.</p>
+      {/* HEADER */}
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold">Care Assistant – Now Hiring</h1>
 
-      <div className="mt-8 grid lg:grid-cols-2 gap-8">
-        <form onSubmit={handleSubmit} className="space-y-4 bg-white p-6 rounded-xl shadow">
-
-          <div>
-            <label className="text-sm">Your name</label>
-            <input name="name" required className="mt-1 w-full border rounded p-2" />
-          </div>
-
-          <div>
-            <label className="text-sm">Phone or email</label>
-            <input name="contact" required className="mt-1 w-full border rounded p-2" />
-          </div>
-
-          <div>
-            <label className="text-sm">Message</label>
-            <textarea name="message" rows="4" className="mt-1 w-full border rounded p-2" />
-          </div>
-
-          {/* Invisible Turnstile widget */}
-          <div
-            className="cf-turnstile"
-          ></div>
-
-          <button
-            type="submit"
-            disabled={loading}
-            className="border-[#009EE3] border-2 text-[#009EE3] px-4 py-2 rounded-md"
-          >
-            {loading ? "Sending..." : "Send message"}
-          </button>
-        </form>
-
-        <div className="p-6 bg-white border-2 border-gray-200 rounded-xl shadow">
-          <h4 className="font-semibold">Our office</h4>
-          <p className="mt-2 text-sm text-gray-600">SukhiSaathi Support — UK Registered</p>
-
-          <dl className="mt-4 text-sm text-gray-600">
-            <dt className="font-medium">Phone</dt>
-            <dd className="mb-2">+44 7471 012326</dd>
-
-            <dt className="font-medium">Email</dt>
-            <a href="mailto:director@sukhisaathisupport.co.uk"
-              className="text-[#009EE3] hover:text-[#68ccf7]">director@sukhisaathisupport.co.uk</a>
-
-            <dt className="font-medium mt-3">Address</dt>
-            <dd>177 Alma Street, Radcliffe, Manchester, M26 4EX</dd>
-          </dl>
-        </div>
+        <button
+          onClick={() => setShowForm(true)}
+          className="px-6 py-3 bg-[#009EE3] hover:bg-[#2f728f] text-white rounded-md shadow"
+        >
+          Apply Now
+        </button>
       </div>
+
+      <p className="text-gray-600 max-w-2xl mb-10">
+        Join our caring and dedicated team. As a Care Assistant, you will make a positive impact 
+        on individuals' lives by helping them stay independent, active and supported.
+      </p>
+
+      {/* CARD */}
+      <div className="p-6 bg-white rounded-xl border shadow-sm">
+        <div className="flex justify-between">
+          <h3 className="text-xl font-semibold">{JOB.title}</h3>
+          <span className="text-sm text-gray-500">{JOB.location}</span>
+        </div>
+        <p className="mt-2 text-gray-600">{JOB.desc}</p>
+
+        <button
+          onClick={() => setShowForm(true)}
+          className="mt-4 text-[#009EE3] font-medium"
+        >
+          Apply →
+        </button>
+      </div>
+
+      {/* POPUP FORM */}
+      {showForm && (
+        <div
+          className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
+          onClick={(e) => e.target === e.currentTarget && setShowForm(false)}
+        >
+          <div className="bg-white w-full max-w-lg rounded-xl p-6 shadow-xl">
+
+            <h2 className="text-2xl font-semibold mb-4">Apply for Care Assistant</h2>
+
+            <form onSubmit={submitForm} className="space-y-4">
+
+              <input type="text" name="name" required placeholder="Your Name" className="border p-2 w-full rounded" />
+              <input type="email" name="email" required placeholder="Email" className="border p-2 w-full rounded" />
+              <input type="text" name="phone" required placeholder="Phone Number" className="border p-2 w-full rounded" />
+              <input type="text" name="resume" required placeholder="Resume Link (Google Drive / URL)" className="border p-2 w-full rounded" />
+
+              <select name="interest" required className="border p-2 w-full rounded">
+                <option value="">Area of Interest</option>
+                <option value="Full-time">Full-time</option>
+                <option value="Part-time">Part-time</option>
+                <option value="Weekend only">Weekend Only</option>
+                <option value="Night shifts">Night Shifts</option>
+              </select>
+
+              <textarea name="message" rows="4" placeholder="Tell us about yourself (optional)" className="border p-2 w-full rounded" />
+
+              {/* CAPTCHA */}
+              <div className="cf-turnstile-job"></div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-[#009EE3] text-white py-3 rounded-md"
+              >
+                {loading ? "Submitting..." : "Submit Application"}
+              </button>
+            </form>
+
+            <button
+              onClick={() => setShowForm(false)}
+              className="mt-4 w-full py-2 bg-gray-200 rounded-md"
+            >
+              Cancel
+            </button>
+
+          </div>
+        </div>
+      )}
     </section>
   );
 }
