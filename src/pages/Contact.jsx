@@ -6,17 +6,17 @@ export default function Contact() {
   const [captchaToken, setCaptchaToken] = useState("");
 
   // Load Turnstile token callback
- useEffect(() => {
-  // render widget after React mounts
-  if (window.turnstile) {
-    window.turnstile.render('.cf-turnstile', {
-      sitekey: "0x4AAAAAACB8UuVvJ0oVE9z0",
-      callback: function(token) {
-        setCaptchaToken(token);
-      }
-    });
-  }
-}, []);
+  useEffect(() => {
+    // render widget after React mounts
+    if (window.turnstile) {
+      window.turnstile.render('.cf-turnstile', {
+        sitekey: "0x4AAAAAACB8UuVvJ0oVE9z0",
+        callback: function (token) {
+          setCaptchaToken(token);
+        }
+      });
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,7 +47,7 @@ export default function Contact() {
       });
 
       if (res.ok) {
-        toast.success("Message sent successfully!");
+        toast.success("Thank you! We’ve received your message — our team will contact you within 24 hours.");
         e.target.reset();
         setCaptchaToken("");
         window.turnstile?.reset(); // reset widget
@@ -109,7 +109,7 @@ export default function Contact() {
 
             <dt className="font-medium">Email</dt>
             <a href="mailto:director@sukhisaathisupport.co.uk"
-               className="text-[#009EE3] hover:text-[#68ccf7]">director@sukhisaathisupport.co.uk</a>
+              className="text-[#009EE3] hover:text-[#68ccf7]">director@sukhisaathisupport.co.uk</a>
 
             <dt className="font-medium mt-3">Address</dt>
             <dd>177 Alma Street, Radcliffe, Manchester, M26 4EX</dd>
