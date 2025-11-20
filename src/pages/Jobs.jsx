@@ -27,46 +27,55 @@ export default function Jobs() {
   }, [showForm]);
 
   // SUBMIT APPLICATION
-  const submitForm = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setResult("");
+ const submitForm = async (e) => {
+  e.preventDefault();
+  setLoading(true);
 
-    const formData = new FormData(e.target);
-
-    const payload = {
-      jobTitle: JOB.title,
-      name: formData.get("name"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      resume: formData.get("resume"),
-      interest: formData.get("interest"),
-      message: formData.get("message") || "",
-      captcha: captchaToken,    // <-- ADD THIS
-    };
-
-
-    try {
-      const res = await fetch("https://api.sukhisaathisupport.co.uk/apply", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        setResult("Application submitted successfully! We will contact you within 24 hours.");
-        e.target.reset();
-      } else {
-        setResult(data.error || "Something went wrong. Try again.");
-      }
-    } catch (err) {
-      setResult("Network error. Please try again.");
-    }
-
+  if (!captchaToken) {
+    toast.error("Please complete the captcha.");
     setLoading(false);
+    return;
+  }
+
+  const formData = new FormData(e.target);
+  const payload = {
+    jobTitle: JOB.title,
+    name: formData.get("name"),
+    email: formData.get("email"),
+    phone: formData.get("phone"),
+    resume: formData.get("resume"),
+    interest: formData.get("interest"),
+    message: formData.get("message") || "",
+    captcha: captchaToken,
   };
+
+  try {
+    const res = await fetch("https://api.sukhisaathisupport.co.uk/apply", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      toast.success("Application submitted successfully! We will contact you soon.");
+      e.target.reset();
+      setShowForm(false);
+
+      // Reset captcha
+      window.turnstile?.reset(".cf-turnstile-job");
+      setCaptchaToken("");
+    } else {
+      toast.error(data.error || "Something went wrong.");
+    }
+  } catch (err) {
+    toast.error("Network error. Try again.");
+  }
+
+  setLoading(false);
+};
+
 
   return (
     <section className="py-16 max-w-5xl mx-auto px-4">
