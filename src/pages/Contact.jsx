@@ -88,9 +88,6 @@ export default function Contact() {
           {/* Invisible Turnstile widget */}
           <div
             className="cf-turnstile"
-            data-sitekey="0x4AAAAAACB8UuVvJ0oVE9z0"
-            data-callback="turnstileCallback"
-            data-theme="light"
           ></div>
 
           <button
