@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Jobs() {
   const [showForm, setShowForm] = useState(false);
@@ -120,7 +120,6 @@ export default function Jobs() {
               <input type="email" name="email" required placeholder="Email" className="border p-2 w-full rounded" />
               <input type="text" name="phone" required placeholder="Phone Number" className="border p-2 w-full rounded" />
               <input type="text" name="resume" required placeholder="Resume Link (Google Drive / URL)" className="border p-2 w-full rounded" />
-              <div className="cf-turnstile-job"></div>
 
 
               <select name="interest" required className="border p-2 w-full rounded">
@@ -132,6 +131,8 @@ export default function Jobs() {
               </select>
 
               <textarea name="message" rows="4" placeholder="Tell us about yourself (optional)" className="border p-2 w-full rounded" />
+
+                              <div className="cf-turnstile-job"></div>
 
               <button type="submit" className="w-full bg-[#009EE3] text-white py-3 rounded-md">
                 {loading ? "Submitting..." : "Submit Application"}
