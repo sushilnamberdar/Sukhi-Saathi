@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export default function Jobs() {
   const [showForm, setShowForm] = useState(false);
@@ -27,55 +28,49 @@ export default function Jobs() {
   }, [showForm]);
 
   // SUBMIT APPLICATION
- const submitForm = async (e) => {
-  e.preventDefault();
-  setLoading(true);
+  const submitForm = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setResult("");
 
-  if (!captchaToken) {
-    toast.error("Please complete the captcha.");
-    setLoading(false);
-    return;
-  }
+    const formData = new FormData(e.target);
 
-  const formData = new FormData(e.target);
-  const payload = {
-    jobTitle: JOB.title,
-    name: formData.get("name"),
-    email: formData.get("email"),
-    phone: formData.get("phone"),
-    resume: formData.get("resume"),
-    interest: formData.get("interest"),
-    message: formData.get("message") || "",
-    captcha: captchaToken,
-  };
+    const payload = {
+      jobTitle: JOB.title,
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      resume: formData.get("resume"),
+      interest: formData.get("interest"),
+      message: formData.get("message") || "",
+      captcha: captchaToken,    // <-- ADD THIS
+    };
 
-  try {
-    const res = await fetch("https://api.sukhisaathisupport.co.uk/apply", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
 
-    const data = await res.json();
+    try {
+      const res = await fetch("https://api.sukhisaathisupport.co.uk/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-    if (res.ok) {
-      toast.success("Application submitted successfully! We will contact you soon.");
-      e.target.reset();
-      setShowForm(false);
+      const data = await res.json();
 
-      // Reset captcha
-      window.turnstile?.reset(".cf-turnstile-job");
-      setCaptchaToken("");
-    } else {
-      toast.error(data.error || "Something went wrong.");
+      if (res.ok) {
+        setResult("Application submitted successfully! We will contact you within 24 hours.");
+        toast.success("Application submitted successfully!");
+        e.target.reset();
+      } else {
+        setResult(data.error || "Something went wrong. Try again.");
+        toast.error(data.error || "Something went wrong. Try again.");
+      }
+    } catch (err) {
+      setResult("Network error. Please try again.");
+      toast.error("Network error. Please try again.");
     }
-  } catch (err) {
-    toast.error("Network error. Try again.");
-  }
 
-  setLoading(false);
-};
-
+    setLoading(false);
+  };
 
   return (
     <section className="py-16 max-w-5xl mx-auto px-4">
