@@ -75,7 +75,7 @@ export default function Header() {
                 ${shrink ? "text-sm" : "text-base"}
               `}
             >
-              SukhiSaathi Support
+              Sukhi Saathi Support
             </div>
 
             <div
