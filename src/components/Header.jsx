@@ -40,7 +40,7 @@ export default function Header() {
       {/* Top email bar */}
       <div className="flex items-center justify-center space-x-6">
         <a
-          href="mailto:director@sukhisaathisupport.co.uk"
+          href="mailto:info@sukhisaathisupport.co.uk"
           className="text-center text-sm text-[#009EE3] py-1 hover:text-[#68ccf7] transition"
         >
           info@sukhisaathisupport.co.uk
