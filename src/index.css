@@ -18,3 +18,14 @@
   animation: pulse-glow 2s infinite;
 }
 
+.valley-div {
+  height: 200px;
+  width: 100%;
+  
+  /* The magic part */
+  background: radial-gradient(
+    100% 50% at 50% 0%, 
+    transparent 50%, 
+    #4a90e2 50.1%
+  );
+}

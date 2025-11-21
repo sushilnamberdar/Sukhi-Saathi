@@ -48,7 +48,7 @@ export default function Services() {
 
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 ">
       <div className="max-w-6xl mx-auto px-4 space-y-16">
 
         {/* HERO SECTION */}

@@ -30,7 +30,7 @@ export default function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Header />
-      <main className="pt-24">
+      <main className="pt-24 ">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
@@ -54,7 +54,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-      <WhatsAppSupport/>
+      {/* <WhatsAppSupport/> */}
     </BrowserRouter>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function WhyChosseUs() {
   return (
-    <section className="max-w-6xl mx-auto px-4 py-16 bg-white text-black">
+    <section className="max-w-6xl mx-auto px-4 py-16  text-black">
       <h3 className="text-3xl font-bold text-center">Why Choose Us</h3>
       <p className="text-center text-gray-600 max-w-2xl mx-auto mt-4">
         We provide safe, friendly and reliable support — delivered by people who treat your family with respect and dignity.
