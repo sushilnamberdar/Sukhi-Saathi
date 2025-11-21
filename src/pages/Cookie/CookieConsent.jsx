@@ -152,7 +152,7 @@ function CookieBanner({ onAcceptAll, onRejectAll, onManage }) {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-2 md:ml-auto">
+        <div className="flex  md:flex-col  lg:flex-row gap-2 md:ml-auto">
           <button
             onClick={onManage}
             className="px-3 py-2 w-[150px] rounded-full border text-gray-700 text-xs md:text-sm hover:bg-gray-100"
@@ -164,7 +164,7 @@ function CookieBanner({ onAcceptAll, onRejectAll, onManage }) {
             onClick={onRejectAll}
             className="px-3 py-2 w-[150px] rounded-full border text-gray-700 text-xs md:text-sm hover:bg-gray-100"
           >
-            Reject non-essential
+            Reject <br/> non-essential
           </button>
 
           <button
