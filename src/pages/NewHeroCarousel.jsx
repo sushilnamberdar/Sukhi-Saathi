@@ -18,7 +18,7 @@ export default function NewHeroCarousel() {
   const slides = [
     {
       image: hero1,
-      title: "24hrs Healthcare Ltd",
+      title: "24hrs Healthcare ",
       subtitle: "Providing care with compassion.",
       button: "Contact us today",
       path: "/contact",
