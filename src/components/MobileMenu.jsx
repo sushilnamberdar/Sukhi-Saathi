@@ -5,16 +5,16 @@ export default function MobileMenu() {
   const [open, setOpen] = React.useState(false);
   const [servicesOpen, setServicesOpen] = React.useState(false);
   const [aboutOpen, setAboutOpen] = React.useState(false);
-    const [shrink, setShrink] = useState(false);
-  
-     useEffect(() => {
-        const handleScroll = () => {
-          setShrink(window.scrollY > 20); // shrink on scroll
-        };
-    
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-      }, []);
+  const [shrink, setShrink] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShrink(window.scrollY > 20); // shrink on scroll
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const menuRef = React.useRef(null);
 
@@ -57,7 +57,7 @@ export default function MobileMenu() {
 
       {/* Mobile Dropdown Menu */}
       {open && (
-        <div className={`fixed top-16  left-0 right-0 w-full bg-white shadow-xl border-t p-5 z-50 space-y-4 ${shrink ? "mt-7": "mt-12"}`}>
+        <div className={`fixed top-16  left-0 right-0 w-full bg-white shadow-xl border-t p-5 z-50 space-y-4 ${shrink ? "mt-7" : "mt-12"}`}>
           <Link to="/" className="hover:text-[#009EE3]">Home</Link>
 
           {/* SERVICES DROPDOWN */}
@@ -109,8 +109,8 @@ export default function MobileMenu() {
             {aboutOpen && (
               <div className="pl-4 mt-2 space-y-2">
                 <Link to="/about" className="block text-gray-700">About Us</Link>
-                <Link to="/how-we-work" className="block text-gray-700">How We Work</Link>
-                <Link to="/working" className="block text-gray-700">Working With Us</Link>
+                <Link to="/about?section=commitment" className="block text-gray-700">How We Work</Link>
+                <Link to="/about?section=working" className="block text-gray-700">Working With Us</Link>
               </div>
             )}
           </div>
@@ -124,7 +124,7 @@ export default function MobileMenu() {
             Jobs
           </Link>
 
-        
+
 
           {/* CONTACT BUTTON */}
           <Link

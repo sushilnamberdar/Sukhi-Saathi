@@ -11,11 +11,15 @@ import {
 
 export default function About() {
   const [active, setActive] = useState("about");
+  const [mactive, setmactive] = useState("about");
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const section = params.get("section");
-    if (section) setActive(section);
+    if (section) {
+      setActive(section)
+      setmactive(section);
+    }
   }, []);
 
   return (
@@ -42,33 +46,30 @@ export default function About() {
             <nav className="space-y-2 p-4 rounded-xl border-2 border-gray-200">
               <button
                 onClick={() => setActive("about")}
-                className={`block w-full text-left px-4 py-2 rounded-md font-medium ${
-                  active === "about"
-                    ? "border-[#009EE3] border-2 text-[#009EE3]"
-                    : "hover:bg-gray-200"
-                }`}
+                className={`block w-full text-left px-4 py-2 rounded-md font-medium ${active === "about"
+                  ? "border-[#009EE3] border-2 text-[#009EE3]"
+                  : "hover:bg-gray-200"
+                  }`}
               >
                 About us
               </button>
 
               <button
                 onClick={() => setActive("commitment")}
-                className={`block w-full text-left px-4 py-2 rounded-md font-medium ${
-                  active === "commitment"
-                    ? "border-[#009EE3] border-2 text-[#009EE3]"
-                    : "hover:bg-gray-200"
-                }`}
+                className={`block w-full text-left px-4 py-2 rounded-md font-medium ${active === "commitment"
+                  ? "border-[#009EE3] border-2 text-[#009EE3]"
+                  : "hover:bg-gray-200"
+                  }`}
               >
                 How we work
               </button>
 
               <button
                 onClick={() => setActive("working")}
-                className={`block w-full text-left px-4 py-2 rounded-md font-medium ${
-                  active === "working"
-                    ? "border-[#009EE3] border-2 text-[#009EE3]"
-                    : "hover:bg-gray-200"
-                }`}
+                className={`block w-full text-left px-4 py-2 rounded-md font-medium ${active === "working"
+                  ? "border-[#009EE3] border-2 text-[#009EE3]"
+                  : "hover:bg-gray-200"
+                  }`}
               >
                 Working with us
               </button>
@@ -135,7 +136,7 @@ export default function About() {
 
         {/* ---------------- MOBILE ACCORDION ---------------- */}
         <div className="md:hidden mt-8">
-          <Accordion type="single" collapsible defaultValue="about" className="space-y-4">
+          <Accordion type="single" collapsible defaultValue={mactive} onChange={setmactive} className="space-y-4">
 
             {/* About accordion */}
             <AccordionItem value="about">
