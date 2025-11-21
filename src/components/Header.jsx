@@ -91,7 +91,7 @@ export default function Header() {
 
         {/* Desktop Navbar */}
         <nav className="hidden md:flex items-center gap-6 text-sm">
-          <Link to="/Home" className="hover:text-[#009EE3]">Home</Link>
+          <Link to="/" className="hover:text-[#009EE3]">Home</Link>
           {/* SERVICES DROPDOWN */}
           <NavigationMenu className="relative">
             <NavigationMenuList>
