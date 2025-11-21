@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function MobileMenu() {
   const [open, setOpen] = React.useState(false);
   const [servicesOpen, setServicesOpen] = React.useState(false);
   const [aboutOpen, setAboutOpen] = React.useState(false);
+    const [shrink, setShrink] = useState(false);
+  
+     useEffect(() => {
+        const handleScroll = () => {
+          setShrink(window.scrollY > 20); // shrink on scroll
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+      }, []);
 
   const menuRef = React.useRef(null);
 
@@ -47,7 +57,8 @@ export default function MobileMenu() {
 
       {/* Mobile Dropdown Menu */}
       {open && (
-        <div className="fixed top-16 mt-7 left-0 right-0 w-full bg-white shadow-xl border-t p-5 z-50 space-y-4">
+        <div className={`fixed top-16  left-0 right-0 w-full bg-white shadow-xl border-t p-5 z-50 space-y-4 ${shrink ? "mt-7": "mt-12"}`}>
+          <Link to="/" className="hover:text-[#009EE3]">Home</Link>
 
           {/* SERVICES DROPDOWN */}
           <div>
@@ -113,9 +124,7 @@ export default function MobileMenu() {
             Jobs
           </Link>
 
-          <Link to="/why-work-in-care" className="block py-2 text-gray-700">
-            Why Work in Care
-          </Link>
+        
 
           {/* CONTACT BUTTON */}
           <Link

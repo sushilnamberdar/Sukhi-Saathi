@@ -91,7 +91,7 @@ export default function Header() {
 
         {/* Desktop Navbar */}
         <nav className="hidden md:flex items-center gap-6 text-sm">
-
+          <Link to="/Home" className="hover:text-[#009EE3]">Home</Link>
           {/* SERVICES DROPDOWN */}
           <NavigationMenu className="relative">
             <NavigationMenuList>
@@ -144,7 +144,7 @@ export default function Header() {
           {/* Standard Links */}
           <Link to="/how-we-care" className="hover:text-[#009EE3]">How We Care</Link>
           <Link to="/jobs" className="hover:text-[#009EE3]">Jobs</Link>
-          <Link to="/why-work-in-care" className="hover:text-[#009EE3]">Why Work in Care</Link>
+
 
           <Link to="/contact" className="bg-[#009EE3] text-white px-4 py-2 rounded-md shadow hover:opacity-95">
             Contact

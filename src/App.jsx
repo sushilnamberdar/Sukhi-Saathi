@@ -24,6 +24,7 @@ import WhatsAppSupport from "./pages/WhatsAppSupport";
 import FAQ from "./pages/FAQ";
 import Complaints from "./pages/Complaints";
 import Safeguarding from "./pages/Safeguarding";
+import CookiePolicy from "./pages/Cookie/CookiePolicy";
 
 export default function App() {
   return (
@@ -51,6 +52,7 @@ export default function App() {
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/why-work-in-care" element={<WhyWorkInCare />} />
           <Route path="how-we-care" element={<HowWeCare />} />
+            <Route path="/cookie-policy" element={<CookiePolicy/>} />
         </Routes>
       </main>
       <Footer />

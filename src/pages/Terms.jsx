@@ -7,13 +7,32 @@ export default function Terms() {
 
         {/* HERO */}
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold text-gray-800">Terms & Conditions</h1>
+          <h1 className="text-4xl font-bold text-gray-800">Terms &amp; Conditions</h1>
           <p className="mt-4 text-gray-600 text-lg">
             By using this website, you agree to the terms outlined below. Please read them carefully.
           </p>
         </div>
 
-        {/* USE OF WEBSITE */}
+        {/* IMPORTANT: OUR STATUS & REGULATION */}
+        <div className="p-8 bg-blue-50 rounded-xl border shadow space-y-3">
+          <h2 className="text-2xl font-semibold text-gray-800">
+            Important: Our Services &amp; Regulation
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            SukhiSaathi Support provides non-regulated support services such as general help,
+            community support, companionship and wellbeing support. We do not provide any
+            regulated activities as defined by the Care Quality Commission (CQC), such as
+            personal care, medication administration or clinical care. If a service you require
+            falls under regulated activity, we will advise you to contact a CQC-registered provider.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            SukhiSaathi Support is not regulated by the Care Quality Commission (CQC) as we do
+            not provide personal care or any regulated activity. All services offered are classed
+            as non-regulated support services.
+          </p>
+        </div>
+
+        {/* 1. USE OF WEBSITE */}
         <div className="p-8 bg-gray-50 rounded-xl border shadow space-y-3">
           <h2 className="text-2xl font-semibold text-gray-800">1. Use of This Website</h2>
           <p className="text-gray-700 leading-relaxed">
@@ -22,7 +41,7 @@ export default function Terms() {
           </p>
         </div>
 
-        {/* INFORMATION ACCURACY */}
+        {/* 2. INFORMATION ACCURACY */}
         <div className="p-8 bg-white rounded-xl border shadow space-y-3">
           <h2 className="text-2xl font-semibold text-gray-800">2. Information on This Site</h2>
           <p className="text-gray-700 leading-relaxed">
@@ -31,7 +50,7 @@ export default function Terms() {
           </p>
         </div>
 
-        {/* SERVICES DESCRIPTION */}
+        {/* 3. SERVICES DESCRIPTION */}
         <div className="p-8 bg-gray-50 rounded-xl border shadow space-y-3">
           <h2 className="text-2xl font-semibold text-gray-800">3. Our Services</h2>
           <p className="text-gray-700 leading-relaxed">
@@ -41,7 +60,7 @@ export default function Terms() {
           </p>
         </div>
 
-        {/* USER RESPONSIBILITIES */}
+        {/* 4. USER RESPONSIBILITIES */}
         <div className="p-8 bg-white rounded-xl border shadow space-y-3">
           <h2 className="text-2xl font-semibold text-gray-800">4. User Responsibilities</h2>
           <ul className="list-disc ml-6 text-gray-700 space-y-1">
@@ -51,18 +70,20 @@ export default function Terms() {
           </ul>
         </div>
 
-        {/* PRIVACY */}
+        {/* 5. PRIVACY */}
         <div className="p-8 bg-gray-50 rounded-xl border shadow space-y-3">
-          <h2 className="text-2xl font-semibold text-gray-800">5. Privacy & Data Use</h2>
+          <h2 className="text-2xl font-semibold text-gray-800">5. Privacy &amp; Data Use</h2>
           <p className="text-gray-700">
-            Your use of our website is also governed by our Privacy Policy.
+            Your use of our website is also governed by our Privacy Policy, which explains how we
+            collect, use and protect your personal information in line with UK GDPR and the Data
+            Protection Act 2018.
           </p>
           <a href="/privacy-policy" className="text-[#009EE3] font-semibold hover:underline">
             View Privacy Policy →
           </a>
         </div>
 
-        {/* LIABILITY */}
+        {/* 6. LIABILITY */}
         <div className="p-8 bg-white rounded-xl border shadow space-y-3">
           <h2 className="text-2xl font-semibold text-gray-800">6. Limitation of Liability</h2>
           <p className="text-gray-700 leading-relaxed">
@@ -78,20 +99,20 @@ export default function Terms() {
           </p>
         </div>
 
-        {/* CHANGES */}
+        {/* 7. CHANGES */}
         <div className="p-8 bg-gray-50 rounded-xl border shadow space-y-3">
           <h2 className="text-2xl font-semibold text-gray-800">7. Changes to These Terms</h2>
           <p className="text-gray-700 leading-relaxed">
-            We may update these Terms & Conditions from time to time. Continued use of the website
+            We may update these Terms &amp; Conditions from time to time. Continued use of the website
             means you accept the latest version.
           </p>
         </div>
 
-        {/* CONTACT */}
+        {/* 8. CONTACT */}
         <div className="p-8 bg-white rounded-xl border shadow space-y-4">
           <h2 className="text-2xl font-semibold text-gray-800">8. Contact Us</h2>
           <p className="text-gray-700">
-            If you have questions about these Terms & Conditions, please contact:
+            If you have questions about these Terms &amp; Conditions, please contact:
           </p>
           <a
             href="mailto:contact@sukhisaathisupport.co.uk"

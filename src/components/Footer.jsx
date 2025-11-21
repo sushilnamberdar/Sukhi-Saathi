@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCookieConsent } from "../pages/Cookie/CookieConsent";
 
 export default function Footer() {
+  const { openSettings } = useCookieConsent();
+
   return (
     <footer className="bg-gray-900 text-gray-200 pt-14 pb-8 mt-12">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-10">
@@ -11,6 +14,20 @@ export default function Footer() {
           <h3 className="text-lg font-semibold mb-4">Useful Links</h3>
           <ul className="space-y-2 text-sm">
             <li><Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
+            <button
+              onClick={openSettings}
+              className="text-sm text-white hover:text-[#009EE3]"
+            >
+              Manage Cookies
+            </button>
+            <li>
+              <Link
+                to="/cookie-policy"
+                className="text-sm text-white hover:text-[#009EE3]"
+              >
+                Cookie Policy
+              </Link>
+            </li>
             <li><Link to="/terms" className="hover:text-white">Terms & Conditions</Link></li>
             <li><Link to="/accessibility" className="hover:text-white">Accessibility</Link></li>
             <li><Link to="/faq" className="hover:text-white">FAQ</Link></li>

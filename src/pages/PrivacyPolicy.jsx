@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
           <h1 className="text-4xl font-bold text-gray-800">Privacy Policy</h1>
           <p className="mt-4 text-gray-600 text-lg">
             This Privacy Policy explains how we collect, use, and protect the personal information
-            you share with SukhiSaathi Support.
+            you share with SukhiSaathi Support, in compliance with UK GDPR and the Data Protection Act 2018.
           </p>
         </div>
 
@@ -54,7 +54,11 @@ export default function PrivacyPolicy() {
             <li>Team members who respond to enquiries or applications</li>
             <li>Emergency services if required for safety</li>
             <li>Technology partners who help run our secure systems</li>
-            <li>Regulatory bodies if we are legally required to provide information</li>
+            <li>Regulatory bodies if legally required</li>
+            <li>
+              We only share information when necessary and always in compliance with UK GDPR and
+              the Data Protection Act 2018.
+            </li>
           </ul>
         </div>
 
@@ -64,6 +68,11 @@ export default function PrivacyPolicy() {
           <p className="text-gray-700 leading-relaxed">
             We use appropriate technical and organisational measures to protect your personal data,
             including encryption, secure storage, and access controls.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            While we take appropriate steps to protect your information, no method of online
+            transmission or electronic storage is completely secure. We cannot guarantee
+            absolute security of your data.
           </p>
         </div>
 
@@ -94,7 +103,9 @@ export default function PrivacyPolicy() {
           <p className="text-gray-700 leading-relaxed">
             If you have any questions about this Privacy Policy or how your data is handled, you can contact us at:
           </p>
-          <a href="mailto:privacy@sukhisaathisupport.co.uk" className="font-semibold text-[#009EE3]">privacy@sukhisaathisupport.co.uk</a>
+          <a href="mailto:privacy@sukhisaathisupport.co.uk" className="font-semibold text-[#009EE3]">
+            privacy@sukhisaathisupport.co.uk
+          </a>
         </div>
 
         {/* CTA */}
@@ -106,7 +117,7 @@ export default function PrivacyPolicy() {
             Contact Us
           </Link>
         </div>
-        
+
       </div>
     </section>
   );
