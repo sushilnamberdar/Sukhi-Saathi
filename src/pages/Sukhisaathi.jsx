@@ -1,5 +1,6 @@
 import React from "react";
 import aboutimage from "../assets/about.webp"
+import newimg from '../assets/1.webp'
 
 
 // Single-file React site for "sukhisaathisupport.co.uk"
@@ -11,7 +12,7 @@ export default function SukhiSaathi() {
     <div className="font-sans text-gray-800 antialiased">
       {/* <Header /> */}
       <main className="pt-24">
-        <About />    
+        <About />  
       </main>
     </div>
   );
@@ -28,6 +29,8 @@ function About() {
     </section>
   );
 }
+
+
 
 
 
