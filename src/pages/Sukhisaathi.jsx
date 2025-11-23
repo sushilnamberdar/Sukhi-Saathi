@@ -1,7 +1,6 @@
 import React from "react";
-import aboutimage from "../assets/about.png"
-import Testimonials from "./Testimonials";
-import WhyChosseUs from "./ WhyChooseUs";
+import aboutimage from "../assets/about.webp"
+
 
 // Single-file React site for "sukhisaathisupport.co.uk"
 // Assumes: Tailwind CSS is configured in the project (Vite / CRA + Tailwind).

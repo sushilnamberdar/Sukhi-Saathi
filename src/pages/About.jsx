@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import topbanner from "../assets/AboutSectiontopbanner.png";
+import topbanner from "../assets/AboutSectiontopbanner.webp";
 
 // Accordion imports
 import {

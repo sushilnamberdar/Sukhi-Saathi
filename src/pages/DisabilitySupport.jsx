@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import disabilityImag from '../assets/services/disability.png';
+import disabilityImag from '../assets/services/disability.webp';
 
 export default function DisabilitySupport() {
   return (

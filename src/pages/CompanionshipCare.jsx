@@ -1,5 +1,5 @@
 import React from "react";
-import campanionshipImg from "../assets/services/companionship.png";
+import campanionshipImg from "../assets/services/companionship.webp";
 import icon from '../assets/logo.png'
 
 export default function CompanionshipCare() {

@@ -1,5 +1,4 @@
 import React from "react";
-import heroImg from "../assets/services/homecare.png";
 import NewHeroCarousel from "./NewHeroCarousel";
 import { Link } from "react-router-dom";
 // import curversvg from '../assets/svg/curve.svg'; // Not needed for CSS method

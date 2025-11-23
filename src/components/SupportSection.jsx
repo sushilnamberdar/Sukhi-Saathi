@@ -1,5 +1,5 @@
 import React from "react";
-import image5 from "../assets/image5.png";
+import image5 from "../assets/image5.webp";
 
 export default function SupportSection() {
   return (

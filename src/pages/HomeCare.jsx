@@ -1,5 +1,5 @@
 import React from "react";
-import homecareImg from "../assets/services/homecare.png";
+import homecareImg from "../assets/services/homecare.webp";
 import { Link } from "react-router-dom";
 
 export default function HomeCare() {

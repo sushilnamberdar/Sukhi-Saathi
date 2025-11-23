@@ -9,9 +9,9 @@ import {
   CarouselPrevious,
 } from "../components/ui/carousel";
 
-import hero1 from "../assets/services/homecare.png";
-import hero2 from "../assets/services/image7.png";
-import hero3 from "../assets/services/image1.png";
+import hero1 from "../assets/services/homecare.webp";
+import hero2 from "../assets/services/image7.webp";
+import hero3 from "../assets/services/image1.webp";
 import { Link } from "react-router-dom";
 
 export default function NewHeroCarousel() {

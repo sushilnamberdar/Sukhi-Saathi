@@ -1,5 +1,5 @@
 import React from "react";
-import respitecareImg from "../assets/services/RespiteCare.png";
+import respitecareImg from "../assets/services/RespiteCare.webp";
 
 export default function RespiteCare() {
   return (
