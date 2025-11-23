@@ -1,5 +1,6 @@
 import React from "react";
 import image5 from "../assets/image5.webp";
+import linkedinIcon from '../assets/icon/linkedin.png'
 
 export default function SupportSection() {
   return (
@@ -35,9 +36,9 @@ export default function SupportSection() {
             Join our team
           </a>
         </div>
-
-        <a href="#" className="block mt-6 text-[#009EE3] hover:underline">
-          Follow us on Facebook
+        <a href="https://www.linkedin.com/company/sukhisaathisupport/" className="flex items-center gap-2 mt-6 text-[#009EE3] hover:underline" target="blank">
+          Follow us on LinkedIn
+          <img src={linkedinIcon} alt="LinkedIn" className="w-10 h-10" />
         </a>
       </div>
     </section>
