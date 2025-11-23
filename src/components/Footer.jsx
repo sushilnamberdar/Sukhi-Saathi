@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useCookieConsent } from "../pages/Cookie/CookieConsent";
+import linkedinIcon from '../assets/icon/linkedin.png'
 
 export default function Footer() {
   const { openSettings } = useCookieConsent();
@@ -40,14 +41,11 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold mb-4">Social Media</h3>
           <a
-            href="#"
+            href="https://www.linkedin.com/company/sukhisaathisupport"
             target="_blank"
             className="inline-flex items-center gap-2 hover:text-white"
           >
-            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2V9.6c0-2 1.2-3.1 3-3.1h2v2h-1c-.7 0-1 .5-1 1.1V12h2.6l-.4 3H14v7A10 10 0 0 0 22 12" />
-            </svg>
-            Facebook
+           <img src={linkedinIcon} alt="LinkedIn" className="w-10 h-10" />
           </a>
         </div>
 
