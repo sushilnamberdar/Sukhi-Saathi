@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 export default function Jobs() {
   const [showForm, setShowForm] = useState(false);
@@ -70,7 +71,7 @@ export default function Jobs() {
             Care Assistant – Now Hiring
           </h1>
           <p className="text-gray-600 mt-2 max-w-2xl">
-            Join our caring and dedicated team. Help individuals stay independent, active, 
+            Join our caring and dedicated team. Help individuals stay independent, active,
             and supported with dignity and compassion.
           </p>
         </div>
@@ -159,6 +160,34 @@ export default function Jobs() {
 
               <textarea name="message" rows="4" placeholder="Message (optional)"
                 className="border p-3 w-full rounded-lg shadow-sm focus:ring-[#009EE3]"></textarea>
+
+              <div className="flex items-left flex-col gap-2 mt-2">
+                <p>Consent</p>
+                <div className="space-x-2">
+                  <input type="checkbox" defaultChecked={true} name="agreeTerms" required />
+
+                  <label className="text-sm">
+                    I agree to the{" "}
+                    <Link
+                      to="/privacy-policy"
+                      target="_blank"
+                      className="text-[#009EE3] underline hover:text-[#68ccf7]"
+                    >
+                      Privacy Policy
+                    </Link>
+                    {" "}and{" "}
+                    <Link
+                      to="/terms"
+                      target="_blank"
+                      className="text-[#009EE3] underline hover:text-[#68ccf7]"
+                    >
+                      Terms & Conditions
+                    </Link>.
+
+                  </label>
+                </div>
+              </div>
+
 
               {/* CAPTCHA */}
               <div className="cf-turnstile-job"></div>
