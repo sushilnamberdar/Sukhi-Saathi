@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import newimg from '../assets/1.webp'
+import { Link } from "react-router-dom";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [captchaToken, setCaptchaToken] = useState("");
 
 
-      const [shrink, setShrink] = useState(false);
-  
-  
-      useEffect(() => {
-      const handleScroll = () => {
-        setShrink(window.scrollY > 20); // shrink on scroll
-      };
-  
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+  const [shrink, setShrink] = useState(false);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShrink(window.scrollY > 20); // shrink on scroll
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Load Turnstile token callback
   useEffect(() => {
@@ -77,6 +78,19 @@ export default function Contact() {
 
   return (
     <>
+      <div className={` ${shrink ? '' : 'mt-20'} ml-1 mr-1 lg:max-w-[80%] mx-auto px-4 py-8 bg-[#89c5df] text-white rounded-lg text-center`}>
+        <h2>Let’s work together to support your staffing and home-support needs</h2>
+        <h1 className="text-[50px]">Request support or staffing today</h1>
+        <p>Whether you're a family looking for friendly, non-medical home support — or an organisation needing reliable, flexible staffing — SukhiSaathi Support is here for you 24/7.
+
+          We provide trained, DBS-checked support workers who deliver safe, non-regulated assistance such as companionship, daily living help, household tasks, community access, and wellbeing support.
+          For organisations, we offer dependable temporary staffing solutions to help cover sickness, holidays, or unexpected gaps — ensuring continuity and peace of mind.
+
+          You stay in full control of the day-to-day care and support; we provide the trusted people who make it possible.
+          Because our services are non-regulated (no personal care or medical tasks), CQC registration is not required.
+
+          Tell us what support or staffing you need, and our team will respond within 24 hours.</p>
+      </div>
       <section id="contact" className={`max-w-6xl  mx-auto px-4  mt-1 mb-1 py-16 border-2 border-gray-200  rounded-lg ${shrink ? '' : 'mt-20'}`}>
 
         <h3 className="text-2xl font-semibold">Contact us</h3>
@@ -99,8 +113,36 @@ export default function Contact() {
               <label className="text-sm">Message</label>
               <textarea name="message" rows="4" className="mt-1 w-full border rounded p-2" />
             </div>
+            <div className="flex items-left flex-col gap-2 mt-2">
+              <p>Consent</p>
+              <div className="space-x-2">
+                <input type="checkbox" defaultChecked={true} name="agreeTerms" required />
 
-            {/* Invisible Turnstile widget */}
+                <label className="text-sm">
+                  I agree to the{" "}
+                  <Link
+                    to="/privacy-policy"
+                    target="_blank"
+                    className="text-[#009EE3] underline hover:text-[#68ccf7]"
+                  >
+                    Privacy Policy
+                  </Link>
+                  {" "}and{" "}
+                  <Link
+                    to="/terms"
+                    target="_blank"
+                    className="text-[#009EE3] underline hover:text-[#68ccf7]"
+                  >
+                    Terms & Conditions
+                  </Link>.
+
+                </label>
+              </div>
+            </div>
+
+
+
+            {/* captcha */}
             <div
               className="cf-turnstile"
             ></div>
@@ -142,7 +184,7 @@ export default function Contact() {
 
 function Banner() {
   return (
-    <section id="about" className="bg-indigo-50/50 py-12">
+    <section id="about" className=" py-12">
       <div className="max-w-6xl mx-auto px-4">
         <a
           href="mailto:info@sukhisaathisupport.co.uk"
