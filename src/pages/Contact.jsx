@@ -78,7 +78,15 @@ export default function Contact() {
 
   return (
     <>
-      <div className={` ${shrink ? '' : 'mt-20'} ml-1 mr-1 lg:max-w-[80%] mx-auto px-4 py-8 bg-[#89c5df] text-white rounded-lg text-center`}>
+      <div
+        className={`${shrink ? "" : "mt-20"
+          } flex flex-col items-center justify-center 
+  mx-auto lg:max-w-[80%] 
+  px-4 py-8 
+  bg-[#89c5df] text-white rounded-lg text-center
+  mx-3 sm:mx-4 lg:mx-auto`}
+      >
+
         <h2>Let’s work together to support your staffing and home-support needs</h2>
         <h1 className="text-[50px]">Request support or staffing today</h1>
         <p>Whether you're a family looking for friendly, non-medical home support — or an organisation needing reliable, flexible staffing — SukhiSaathi Support is here for you 24/7.
@@ -91,7 +99,14 @@ export default function Contact() {
 
           Tell us what support or staffing you need, and our team will respond within 24 hours.</p>
       </div>
-      <section id="contact" className={`max-w-6xl  mx-auto px-4  mt-1 mb-1 py-16 border-2 border-gray-200  rounded-lg ${shrink ? '' : 'mt-20'}`}>
+      <section
+        id="contact"
+        className={`max-w-6xl mx-auto px-4 
+  mt-1 mb-1 py-16 border-2 border-gray-200 rounded-lg
+  ${shrink ? '' : 'mt-20'}
+  mx-3 sm:mx-4 lg:mx-auto`}
+      >
+
 
         <h3 className="text-2xl font-semibold">Contact us</h3>
         <p className="mt-2 text-gray-600">Call us or send a message — we respond within 24 hours.</p>
